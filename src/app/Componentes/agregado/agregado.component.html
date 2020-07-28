@@ -1,5 +1,5 @@
 <!doctype html >
-<html lang="en" >
+<html lang="en" class="bodyBG" >
 <head >
     <title>Contactec</title>
     <meta charset="utf-8">
@@ -7,23 +7,18 @@
 </head>
 <body class="bodyBG" >     
     <header>   
-            
+           
         <nav class="navCentral">
-            <ul>
-                <li><a>Lista de contactos   /</a> </li>
-                <li><a routerLink="/agregado" class="enlace" >Agregar contacto</a> </li>                
+            <ul >
+                <li><a a routerLink="/inicio" class="enlace">Lista de contactos     /</a> </li>
+                <li><a>Agregar contacto</a> </li>                
             </ul>
         </nav>
         
     </header>  
     <div class="contenedor">
-        <div class="columna">
-            <div class = "listaContactos">
-            
-                aqui debe haber una lista de etiquetas que vayan a cada contacto    
-            </div>
-        </div>
-        <div class = "columna2">
+        <div class = "columna">
+            <h2>Agregue los datos del contacto</h2>
             <ul class="seqInputs">
                 <li>Nombre
                     <input type="text">
@@ -44,6 +39,14 @@
                     <input type="email" placeholder="alguien@email.com">
                 </li>
             </ul>            
+        </div>
+        <div class = "columna2">
+            <ul class="seqInputs">                   
+                <img src="../../../assets/contacto.png" class="foto">                   
+                <li>
+                    <button>Guardar</button>           
+                </li>
+            </ul>  
         </div>
     </div>
 

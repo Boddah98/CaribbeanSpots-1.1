@@ -5,19 +5,19 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {inicioComponent} from './Componentes/inicio/inicio.component'
-import {listadoComponent} from './Componentes/listado/listado.component'
+import {agregadoComponent} from './Componentes/agregado/agregado.component'
 @NgModule({
   declarations: [
     AppComponent,inicioComponent,
     inicioComponent,
-    listadoComponent
+    agregadoComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule
   ],
-  providers: [MatListModule,listadoComponent],
+  providers: [MatListModule],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
