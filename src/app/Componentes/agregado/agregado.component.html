@@ -17,36 +17,38 @@
         
     </header>  
     <div class="contenedor">
-        <div class = "columna">
-            <h2>Agregue los datos del contacto</h2>
-            <ul class="seqInputs">
-                <li>Nombre
-                    <input type="text">
-                </li>
-                <li>Primer apellido
-                    <input type="text">
-                </li>
-                <li>Segundo apellido
-                    <input type="text">
-                </li>
-                <li>Número Celular
-                    <input class = "numeroTelefono" type="number">
-                </li>
-                <li>Segundo número Celular
-                    <input class = "numeroTelefono" type="number" placeholder="Opcional">
-                </li>
-                <li>Correo electrónico
-                    <input type="email" placeholder="alguien@email.com">
-                </li>
-            </ul>            
-        </div>
-        <div class = "columna2">
-            <ul class="seqInputs">                   
-                <img src="../../../assets/contacto.png" class="foto">                   
-                <li>
-                    <button>Guardar</button>           
-                </li>
-            </ul>  
+        <form [formGroup]="formulario_Contacto">
+            <div class = "columna">
+                <h2>Agregue los datos del contacto</h2>
+                <ul class="seqInputs">
+                    <li>Nombre
+                        <input type="text" formControlName = "nombre">
+                    </li>
+                    <li>Primer apellido
+                        <input type="text"  formControlName = "apellido1">
+                    </li>
+                    <li>Segundo apellido
+                        <input type="text"  formControlName = "apellido2">
+                    </li>
+                    <li>Número Celular
+                        <input class = "numeroTelefono" type="number"  formControlName = "celular1">
+                    </li>
+                    <li>Segundo número Celular
+                        <input class = "numeroTelefono" type="number" placeholder="Opcional"  formControlName = "celular2">
+                    </li>
+                    <li>Correo electrónico
+                        <input type="email" placeholder="alguien@email.com"  formControlName = "correo_Electronico">
+                    </li>
+                </ul>            
+            </div>
+        </form>
+        <div class = "columna2"> 
+            <div class="separador">
+                <img src="../../../assets/contacto.png" class="foto">
+            </div>                               
+            <div class="separador">
+                <button type="button" class="botonGuardar" (click)= "agregar_Nuevo_Contacto(formulario_Contacto)">Guardar</button>                                       
+            </div>
         </div>
     </div>
 

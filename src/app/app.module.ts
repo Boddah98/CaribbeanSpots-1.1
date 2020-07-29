@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {inicioComponent} from './Componentes/inicio/inicio.component'
 import {agregadoComponent} from './Componentes/agregado/agregado.component'
+import { ReactiveFormsModule } from '@angular/forms';
 @NgModule({
   declarations: [
     AppComponent,inicioComponent,
@@ -15,7 +16,8 @@ import {agregadoComponent} from './Componentes/agregado/agregado.component'
   imports: [
     BrowserModule,
     AppRoutingModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    ReactiveFormsModule
   ],
   providers: [MatListModule],
   bootstrap: [AppComponent]

@@ -14,8 +14,8 @@
 .foto{
     width: 200px;
     float: right;
-
-
+    position: relative;
+    
 }
 .listaContactos{
     background-color: #ffffff;
@@ -47,9 +47,10 @@
     position: relative;
     float: right;
     margin-right: 5em;
-    margin-top: 3em;
-    
+    margin-top: 3em;   
+    margin-bottom: 2em; 
     width: 470px;
+    height: 400px;
 }
 .seqInputs{
     list-style: none;
@@ -69,9 +70,20 @@
     margin-top: 0px;
     margin-bottom: 0px;    
 }
-.columna2 li button{
+.separador{
+    width: 400px;
+    height: 200px;
+    padding: 10px;
+}
+.botonGuardar{
+    width: 100px;
+    height: 30px;
+    right: 10px;
     float: right;
-    background-color: blue;
+    color: antiquewhite;    
+    background-color: #2b4458;
+    margin-top: 130px;
+    position: relative;
 }
 
 /*encabezado*/
