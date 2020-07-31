@@ -75,8 +75,44 @@ app.post('/contacto/add', function(req,res){
 /****************************        -----------------          **************************************/
 
 
+/***********     Este es el que se modifica los contactos     ********/
+app.put('/contacto/:id', function(req,res){
+    const nombre = req.body.nombre;
+    const apellido1 = req.body.apellido1;
+
+    couch.update(dbName,{
+        _id: id,
+        nombre: nombre,
+        apellido1: apellido1
+    }).then(
+        function(data,headers,status){
+            res.redirect('/');
+        },
+        function(err){
+            res.send(err);
+        });
+});
+/***********     Este es el que se modifica los contactos     ********/
+
+
+/****************************        -----------------          **************************************/
+
+
 /***********     Este es el que se borra los contactos     ********/
 app.post('/contacto/delete/:id', function(req, res){
+    const id = req.params.id;
+    const rev = req.body.rev;
+
+    couch.del(dbName, id, rev).then(
+        function(data, headers, status){
+            res.redirect('/');            
+        },
+        function(err){
+            res.send(err);
+        });
+});
+          //version 2 xd
+app.delete('/contacto/:id', function(req, res){
     const id = req.params.id;
     const rev = req.body.rev;
 
