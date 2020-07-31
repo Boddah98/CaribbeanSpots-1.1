@@ -1,6 +1,6 @@
 import {Component} from '@angular/core'
 import {MatListModule} from '@angular/material/list';
-import {contactoService} from '../../services/contacto.service'
+//import {contactoService} from '../../services/contacto.service'
 @Component({
     selector:'app-inicio',
     templateUrl: './inicio.component.html',
@@ -8,7 +8,8 @@ import {contactoService} from '../../services/contacto.service'
 })
 export class inicioComponent{
     contactos;
+    /*
     constructor(private contactoService: contactoService) {
         this.contactos = contactoService.getContactos();
-    }
+    }*/
 }

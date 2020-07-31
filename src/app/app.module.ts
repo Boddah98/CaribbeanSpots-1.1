@@ -6,8 +6,9 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {inicioComponent} from './Componentes/inicio/inicio.component'
 import {agregadoComponent} from './Componentes/agregado/agregado.component'
-import { ReactiveFormsModule } from '@angular/forms';
-import {contactoService} from './services/contacto.service'
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
+//import {contactoService} from './services/contacto.service'
+import { HttpClientModule } from '@angular/common/http'; 
 @NgModule({
   declarations: [
     AppComponent,inicioComponent,
@@ -18,9 +19,9 @@ import {contactoService} from './services/contacto.service'
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule, BrowserModule, FormsModule, HttpClientModule
   ],
-  providers: [MatListModule,contactoService],
+  providers: [MatListModule,HttpClientModule],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
