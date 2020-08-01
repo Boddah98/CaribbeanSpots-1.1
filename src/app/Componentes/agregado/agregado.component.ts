@@ -20,7 +20,8 @@ export class agregadoComponent{
             apellido2:['',Validators.required],
             celular1:['',Validators.required],
             celular2:['',],
-            correo_Electronico:['',Validators.required]
+            correo_Electronico:['',Validators.required],
+            profesion:['',Validators.required]
         })
     }
 
@@ -35,7 +36,8 @@ export class agregadoComponent{
             apellido2: formulario_Contacto.value.apellido2,
             celular1: formulario_Contacto.value.celular1,
             celular2: formulario_Contacto.value.celular2,
-            correo_Electronico: formulario_Contacto.value.correo_Electronico,            
+            correo_Electronico: formulario_Contacto.value.correo_Electronico,
+            profesion: formulario_Contacto.value.profesion,                        
           }
           var url = "http://192.168.1.11:3000/contacto/add";
           return this.http.post(url,data).subscribe(
