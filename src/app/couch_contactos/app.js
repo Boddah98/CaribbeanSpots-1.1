@@ -50,13 +50,13 @@ app.get('/', function(req, res){
 
 /***********     Este es el que se añade los contactos     ********/
 app.post('/contacto/add', function(req,res){
-    const nombre = req.body.nombre;
-    const apellido1 = req.body.apellido1;
-    const apellido2 = req.body.apellido2;
-    const celular1 = req.body.celular1;
-    const celular2 = req.body.celular2;
-    const correo_Electronico = req.body.correo_Electronico;
-    const profesion = req.body.profesion;
+    const nombre = req.contacto.nombre;
+    const apellido1 = req.contacto.apellido1;
+    const apellido2 = req.contacto.apellido2;
+    const celular1 = req.contacto.celular1;
+    const celular2 = req.contacto.celular2;
+    const correo_Electronico = req.contacto.correo_Electronico;
+    const profesion = req.contacto.profesion;
 
     couch.uniqid().then(function(ids){
         const id = ids[0];
@@ -67,12 +67,12 @@ app.post('/contacto/add', function(req,res){
             apellido1: apellido1,
             apellido2: apellido2,
             celular1: celular1,
-            celular1: celular1,
+            celular2: celular2,
             correo_Electronico: correo_Electronico,
             profesion:profesion
         }).then(
             function(data,headers,status){
-                res.redirect('/');
+                res.send(data);
             },
             function(err){
                 res.send(err);

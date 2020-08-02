@@ -1,13 +1,16 @@
 import { Injectable } from '@angular/core';
-import { Http, Response } from '@angular/http';
-import { Observable } from 'rxjs/Rx';
-import { contacto } from "../models/contacto.model";
- /*
+import {HttpClient} from '@angular/common/http'
 @Injectable()
-export class ContactService {
-   constructor(private http: Http) {
+export class ContactoService {
+   constructor(
+      private http: HttpClient
+      ){
    }
- 
+   getMimierda(){
+      return this.http.get("http://localhost:5984/contactos/_all_docs")
+   }
+}
+/* 
    getContact(): Observable<contacto[]> {
       return this.http.get("/")
          .map((res: Response) => res.json())
@@ -32,7 +35,7 @@ export class ContactService {
          .catch((error: any) => Observable.throw(error.json().error || 'Server error'));
    }
 }
-/*
+
 import { Injectable } from '@angular/core';
 import { Http, Response } from '@angular/http';
 import { Observable } from 'rxjs/Rx';

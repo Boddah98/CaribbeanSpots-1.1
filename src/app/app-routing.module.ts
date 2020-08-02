@@ -2,7 +2,6 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import {inicioComponent} from './Componentes/inicio/inicio.component'
 import {agregadoComponent} from './Componentes/agregado/agregado.component'
-import { HttpClientModule } from '@angular/common/http'; 
 const routes: Routes = [
   {path: '', redirectTo: 'inicio', pathMatch: 'full'},
   {path:'inicio', component: inicioComponent},
@@ -10,7 +9,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes),HttpClientModule],
+  imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }

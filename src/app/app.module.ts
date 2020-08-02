@@ -7,21 +7,30 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {inicioComponent} from './Componentes/inicio/inicio.component'
 import {agregadoComponent} from './Componentes/agregado/agregado.component'
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
-//import {contactoService} from './services/contacto.service'
-import { HttpClientModule } from '@angular/common/http'; 
+import {ContactoService} from './services/contacto.service'
+import {HttpClientModule } from '@angular/common/http'
 @NgModule({
   declarations: [
-    AppComponent,inicioComponent,
+    AppComponent,
     inicioComponent,
     agregadoComponent
+    
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    ReactiveFormsModule, BrowserModule, FormsModule, HttpClientModule
+    ReactiveFormsModule, 
+    BrowserModule, 
+    FormsModule,
+    HttpClientModule
+
   ],
-  providers: [MatListModule,HttpClientModule],
+  providers: [MatListModule,
+              ContactoService,
+              HttpClientModule,
+              ContactoService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
