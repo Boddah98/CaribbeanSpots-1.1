@@ -55,7 +55,6 @@ app.get('/', function(req, res){
 
 /***********     Este es el que se añade los contactos     ********/
 app.post('/contacto/add', function(req,res){
-    console.log(req.body.nombre);
     const nombre = req.body.nombre;
     const apellido1 = req.body.apellido1;
     const apellido2 = req.body.apellido2;

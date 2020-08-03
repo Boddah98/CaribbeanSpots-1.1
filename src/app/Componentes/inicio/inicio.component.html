@@ -6,28 +6,24 @@
     <link rel="stylesheet" href="../css/dimensionesCajas.css">
 </head>
 <body class="bodyBG" >     
-    <header>   
-            
+    <header>               
         <nav class="navCentral">
             <ul>
                 <li><a>Lista de contactos   /</a> </li>
                 <li><a routerLink="/agregado" class="enlace" >Agregar contacto</a> </li>                
             </ul>
-        </nav>
-        
+        </nav>        
     </header>  
     <div class="contenedor">
         <div class="columna">
+            <h2><strong>Lista de contactos</strong></h2>
             <div class = "listaContactos">
                 <div>
-                    <ul>
-                    <li *ngFor="let contacto of lista_Contactos | async">{{contacto.nombre}}</li>
-                    </ul>
-                    </div>
-                    aqui debe haber una lista de etiquetas que vayan a cada contacto    
-            </div>
+                    
+                </div>                  
         </div>
-        <div class = "columna2">
+    </div>
+    <div class = "columna2">
             <ul class="seqMostrar">
                 <li>Nombre:
                     

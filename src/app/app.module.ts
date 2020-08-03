@@ -9,6 +9,7 @@ import {agregadoComponent} from './Componentes/agregado/agregado.component'
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import {ContactoService} from './services/contacto.service'
 import {HttpClientModule } from '@angular/common/http'
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -30,6 +31,7 @@ import {HttpClientModule } from '@angular/common/http'
               ContactoService,
               HttpClientModule,
               ContactoService
+
   ],
   bootstrap: [AppComponent]
 })

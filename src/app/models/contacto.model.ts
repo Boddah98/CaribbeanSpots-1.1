@@ -1,11 +1,10 @@
-export class contacto {
-    constructor(
-       public id: string,
-       public nombre: string,
-       public apellido1: string,
-       public apellido2: string,
-       public celular1: string,
-       public celular2: string,
-       public correo_Electronico: string
-    ) {}
+export interface contacto {   
+      id: string,
+      nombre: string,
+      apellido1: string,
+      apellido2: string,
+      celular1: string,
+      celular2: string,
+      correo_Electronico: string,
+      profesion: string
  }

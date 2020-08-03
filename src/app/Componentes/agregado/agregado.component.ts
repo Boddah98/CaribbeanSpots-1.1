@@ -29,8 +29,6 @@ export class agregadoComponent{
         
     }
 
-   
-
     agregar_Nuevo_Contacto(formulario_Contacto){ 
         let body = new HttpParams();
         body = body.set('nombre', formulario_Contacto.nombre);
@@ -43,7 +41,8 @@ export class agregadoComponent{
         var url = "http://localhost:3000/contacto/add";
         return this.http.post(url,body).subscribe(
             data=> {
-                console.log('agradecido con el de arriba')
+                alert("Contacto agregado con exito");
+                console.log('agregado');
             })
         
         }
