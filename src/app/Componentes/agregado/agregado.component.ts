@@ -10,7 +10,8 @@ import{ContactoService} from 'src/app/services/contacto.service'
     
 })
 export class agregadoComponent{
-    formulario_Contacto: FormGroup
+    formulario_Contacto: FormGroup;
+    
     constructor(
         private http: HttpClient,
         private _builder: FormBuilder,
@@ -25,41 +26,26 @@ export class agregadoComponent{
             correo_Electronico:['',Validators.required],
             profesion:['',Validators.required]
         })
-    }
-    print(){
-    console.log(            
-        this.datos_Service.getMimierda()
-        );
-    }
-    guardaDatos(formulario_Contacto){        
-        console.log(formulario_Contacto.value.nombre);
+        
     }
 
+   
+
     agregar_Nuevo_Contacto(formulario_Contacto){ 
-        let contacto = new HttpParams();
-        contacto = contacto.set('nombre', formulario_Contacto.value.nombre);
-        contacto = contacto.set('apellido1', formulario_Contacto.value.apellido1);
-        contacto = contacto.set('apellido2', formulario_Contacto.value.apellido2);
-        contacto = contacto.set('celular1', formulario_Contacto.value.celular1);
-        contacto = contacto.set('celular2', formulario_Contacto.value.celular2);
-        contacto = contacto.set('correo_Electronico', formulario_Contacto.value.correo_Electronico);
-        contacto = contacto.set('profesion', formulario_Contacto.value.profesion);
-        /*
-        var data={
-            nombre: formulario_Contacto.value.nombre,
-            apellido1: formulario_Contacto.value.apellido1,
-            apellido2: formulario_Contacto.value.apellido2,
-            celular1: formulario_Contacto.value.celular1,
-            celular2: formulario_Contacto.value.celular2,
-            correo_Electronico: formulario_Contacto.value.correo_Electronico,
-            profesion: formulario_Contacto.value.profesion,                        
-          }*/
-          var url = "http://localhost:3000/contacto/add";
-          return this.http.post(url,contacto).subscribe(
+        let body = new HttpParams();
+        body = body.set('nombre', formulario_Contacto.nombre);
+        body = body.set('apellido1', formulario_Contacto.apellido1);
+        body = body.set('apellido2', formulario_Contacto.apellido2);
+        body = body.set('celular1', formulario_Contacto.celular1);
+        body = body.set('celular2', formulario_Contacto.celular2);
+        body = body.set('correo_Electronico', formulario_Contacto.correo_Electronico);
+        body = body.set('profesion', formulario_Contacto.profesion);
+        var url = "http://localhost:3000/contacto/add";
+        return this.http.post(url,body).subscribe(
             data=> {
                 console.log('agradecido con el de arriba')
-              //si entra es porque funciona
             })
         
         }
+    
 }

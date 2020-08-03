@@ -1,15 +1,21 @@
 import {Component} from '@angular/core'
-import {MatListModule} from '@angular/material/list';
-//import {contactoService} from '../../services/contacto.service'
+import {HttpClient} from '@angular/common/http'
 @Component({
     selector:'app-inicio',
     templateUrl: './inicio.component.html',
     styleUrls: ["../css/dimensionesCajas.css"]
 })
 export class inicioComponent{
-    contactos;
-    /*
-    constructor(private contactoService: contactoService) {
-        this.contactos = contactoService.getContactos();
-    }*/
+    lista_Contactos;    
+    constructor(
+        private http: HttpClient,
+    ){
+        this.lista_Contactos = this.llenar_Lista();
+    }
+    llenar_Lista(){
+        var url = "http://localhost:3000/";
+        return this.http.get(url).subscribe(
+            data=>{console.log("ENTRA")}
+        )
+    }
 }

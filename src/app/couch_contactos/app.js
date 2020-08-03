@@ -10,6 +10,7 @@ const couch = new NodeCouchDb({
     }
 
 });
+
 couch.listDatabases().then(function(dbs){
     console.log(dbs);
 });
@@ -17,6 +18,10 @@ const dbName = 'contactos';
 const viewUrl = '_design/all_contactos/_view/all';
 
 const app = express();
+
+var cors = require('cors')
+
+app.use(cors())
 
 app.set('view engine','ejs');
 app.set('views', path.join(__dirname, 'views'));
@@ -50,13 +55,14 @@ app.get('/', function(req, res){
 
 /***********     Este es el que se añade los contactos     ********/
 app.post('/contacto/add', function(req,res){
-    const nombre = req.contacto.nombre;
-    const apellido1 = req.contacto.apellido1;
-    const apellido2 = req.contacto.apellido2;
-    const celular1 = req.contacto.celular1;
-    const celular2 = req.contacto.celular2;
-    const correo_Electronico = req.contacto.correo_Electronico;
-    const profesion = req.contacto.profesion;
+    console.log(req.body.nombre);
+    const nombre = req.body.nombre;
+    const apellido1 = req.body.apellido1;
+    const apellido2 = req.body.apellido2;
+    const celular1 = req.body.celular1;
+    const celular2 = req.body.celular2;
+    const correo_Electronico = req.body.correo_Electronico;
+    const profesion = req.body.profesion;
 
     couch.uniqid().then(function(ids){
         const id = ids[0];
